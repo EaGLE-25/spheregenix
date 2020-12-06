@@ -27,6 +27,9 @@ app.get("/",(req,res)=>{
   res.render("home");
 })
 
+app.get("/sell",(req,res)=>{
+	res.render("sell");
+})
 
 app.listen(process.env.PORT || 5001, process.env.IP, function () {
   console.log("Spheregenix started");

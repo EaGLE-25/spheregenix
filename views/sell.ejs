@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs"); %>
+
+<form>
+    <!-- length -->
+  
+    <label for="length">Length</label>
+    <input type="number"><br>
+    <!-- Breadth -->
+    <label for="breadth">Breadth</label>
+    <input type="number"><br>
+    <!-- square feet -->
+    <label for="type">Square Feet</label>
+    <input type="number"><br>
+    <!-- type of conversion -->
+    <label for="typeofconversion">Type of conversion:</label>
+    <select>
+      <option value="Zone1">Zone 1</option>
+      <option value="Zone2">Zone 2</option>
+      <option value="Zone3">Zone 3</option>
+      <option value="Zone4">Zone 4</option>
+      <option value="industrialConverson">industrial Converson
+      </option>
+      <option value="warehouseconversion">Warehouse conversion</option>
+      <option value="freezone">Free zone</option>
+    </select> <br>
+
+    <!-- type of sites -->
+    <label for="typeofsites">Type of sites:</label><br>
+    <select>
+      <option value="Bda">BDA</option>
+      <option value="Dc">DC</option>
+      <option value="BMRDA">BMRDA</option>
+      <option value="NPA">NPA</option>
+      <option value="Residential">Residential
+      </option>
+      <option value="A-KATHA">A-KATHA</option>
+      <option value="E-KATHA">E-KATHA</option>
+    </select> <br>
+
+    <!-- estimated price -->
+    <label for="price">Estimated Price</label>
+    <input type="number"><br>
+    <!-- locality -->
+    <label for="locality">Locality</label>
+    <input type="text"><br>
+     <!-- pincode -->
+     <label for="pincode">Pincode</label>
+     <input type="text"><br>
+     <!-- address -->
+     <label for="Address"></label>Address
+     <input type="text"><br>
+</form>
+
+
+<%- include("partials/footer.ejs"); %>
