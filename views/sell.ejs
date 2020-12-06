@@ -1,19 +1,18 @@
 <%- include("partials/header.ejs"); %>
 
-<form>
+<form method="POST" action="/sell-land">
     <!-- length -->
-  
-    <label for="length">Length</label>
-    <input type="number"><br>
+    <label>Length</label>
+    <input type="number" name="length"><br>
     <!-- Breadth -->
-    <label for="breadth">Breadth</label>
-    <input type="number"><br>
+    <label>Breadth</label>
+    <input type="number" name="breadth"><br>
     <!-- square feet -->
-    <label for="type">Square Feet</label>
-    <input type="number"><br>
+    <label>Square Feet</label>
+    <input type="number" name="square_feet"><br>
     <!-- type of conversion -->
-    <label for="typeofconversion">Type of conversion:</label>
-    <select>
+    <label>Type of conversion:</label>
+    <select name="conversion">
       <option value="Zone1">Zone 1</option>
       <option value="Zone2">Zone 2</option>
       <option value="Zone3">Zone 3</option>
@@ -22,11 +21,11 @@
       </option>
       <option value="warehouseconversion">Warehouse conversion</option>
       <option value="freezone">Free zone</option>
-    </select> <br>
+    </select><br>
 
     <!-- type of sites -->
-    <label for="typeofsites">Type of sites:</label><br>
-    <select>
+    <label>Type of sites:</label><br>
+    <select name="type">
       <option value="Bda">BDA</option>
       <option value="Dc">DC</option>
       <option value="BMRDA">BMRDA</option>
@@ -38,17 +37,19 @@
     </select> <br>
 
     <!-- estimated price -->
-    <label for="price">Estimated Price</label>
-    <input type="number"><br>
+    <label>Estimated Price</label>
+    <input type="number" name="price"><br>
     <!-- locality -->
-    <label for="locality">Locality</label>
-    <input type="text"><br>
+    <label>Locality</label>
+    <input type="text" name="locality"><br>
      <!-- pincode -->
-     <label for="pincode">Pincode</label>
-     <input type="text"><br>
+     <label>Pincode</label>
+     <input type="text" name="pincode"><br>
      <!-- address -->
-     <label for="Address"></label>Address
-     <input type="text"><br>
+     <label></label>Address
+     <input type="text" name="address"><br>
+
+    <input type="submit" value="submit" class="sell-submit">
 </form>
 
 
