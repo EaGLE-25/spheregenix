@@ -1,10 +1,9 @@
 const Database = require("./database");
 const LandSchema = require("../models/land");
 
-class Transaction{
-  constructor(land,mode){
+class Actions{
+  constructor(land){
     this.land = land;
-    this.mode = mode;
   }
 
   sell(){
@@ -13,4 +12,4 @@ class Transaction{
   }
 }
 
-module.exports = Transaction;
+module.exports = Actions;

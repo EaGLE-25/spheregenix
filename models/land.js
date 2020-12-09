@@ -1,14 +1,14 @@
 const mongoose  = require("mongoose");
 
 const landSchema = new mongoose.Schema({
-  length:String,
-  breadth:String,
-  square_feet:String,
+  length:Number,
+  breadth:Number,
+  square_feet:Number,
   conversion:String,
   type:String,
-  price:String,
+  price:Number,
   locality:String,
-  pincode:String,
+  pincode:Number,
   address:String,
   approval:{default:false}
 })
