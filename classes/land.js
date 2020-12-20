@@ -9,6 +9,7 @@ class Land{
     this.locality = landObject.locality;
     this.pincode  = landObject.pincode;
     this.address = landObject.address;
+    this.images = [];
   }
 }
 

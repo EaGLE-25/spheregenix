@@ -5,10 +5,11 @@ class UserInterface{
      this.user = user
    }
 
-   sellMyLand(land){
-     const action = new UserAction(land);
+   sellMyLand(reqObj){
+     const action = new UserAction(reqObj.body);
      action.sell();
    }
 }
+
 
 module.exports = UserInterface;
