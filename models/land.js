@@ -10,7 +10,8 @@ const landSchema = new mongoose.Schema({
   locality:String,
   pincode:Number,
   address:String,
-  approval:{default:false}
+  imagesUrl:[],
+  approval:{type:Boolean,default:false}
 })
 
 module.exports = mongoose.model("LandSchema",landSchema);

@@ -39,6 +39,7 @@ app.get("/land/sell",(req,res)=>{
 app.post("/lands",bodyParser.json(),(req,res)=>{
 	userInterface.sellMyLand(req);
 	res.json(true);
+	console.log(req.body);
 })
 
 app.listen(process.env.PORT || 5001, process.env.IP, function () {

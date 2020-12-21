@@ -1,0 +1,43 @@
+
+console.log("linked");
+$(document).ready(function(){
+    $('.sellForm').validate({
+        rules:{
+            
+           length:{
+               required:true,
+               number:true
+           },
+           breadth:{
+                required:true,
+                number:true
+           },
+           SquareFeet:{
+                required:true,
+                number:true
+           },
+           typeofconversion:{
+               required:true
+           },
+           typeofsites:{
+               required:true
+           },
+           price:{
+               required:true,
+               number:true
+           },
+           locality:{
+               required:true,
+               lettersonly: true 
+           },
+           pincode:{
+              required:true,
+              number:true
+           },
+           Address:{
+              required:true,
+              rangelength:[10,50]
+           }
+        }
+    })
+})
