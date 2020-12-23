@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs"); %>
+
+<h1>Lands index page</h1>
+
+<div class="container allLands">
+  <% for(var i=0;i< allLands.length;i++){ %>
+    <div class="land" style="display: flex;">
+      <div class="img">
+        <img src="<%= allLands[i].imagesUrl[0] %>" alt="thumbnail" srcset="" style="width: 250px;height: 200px;">
+      </div>
+      <div class="body">
+         <h3><%= allLands[i].type %></h3>
+         <h5>₹ <%= allLands[i].price %></h5>
+         <h5><%= allLands[i].square_feet %> sq ft</h5>
+         <p class="locality"><%= allLands[i].locality %></p>
+         <a href="/land/<%= allLands[i]._id %>">View More</a>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+
+<%- include("partials/footer.ejs"); %>

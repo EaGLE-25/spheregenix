@@ -26,9 +26,7 @@ async function fetchPost(url,data){
     },
     body: JSON.stringify(data)
   })
- 
   return response.json();
-  
 }
 
 function getformObject(form){

@@ -32,17 +32,35 @@ app.get("/",(req,res)=>{
   res.render("home");
 })
 
+app.get("/lands",(req,res)=>{
+	userInterface.getLand().then((allLands)=>{
+		res.render("lands",{allLands:allLands});
+	});
+})
+
+app.get("/lands/:id",(req,res)=>{
+	userInterface.getLand({_id:req.params.id}).then((land)=>{
+		console.log(land);
+		res.render("show",{land:land});
+	})
+})
+
 app.get("/land/sell",(req,res)=>{
 	res.render("sell");
 })
 
 app.post("/lands",bodyParser.json(),(req,res)=>{
-	userInterface.sellMyLand(req);
+	console.log("from server",req.body);
+	userInterface.sellMyLand(req.body);
 	res.json(true);
-	console.log(req.body);
 })
+
 
 app.listen(process.env.PORT || 5001, process.env.IP, function () {
 	console.log("Spheregenix started");
+})
+
+app.get("*",(req,res)=>{
+	res.send("404 not found");
 })
 

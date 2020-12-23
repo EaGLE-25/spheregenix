@@ -12,14 +12,14 @@ $(document).ready(function(){
                 required:true,
                 number:true
            },
-           SquareFeet:{
+           square_feet:{
                 required:true,
                 number:true
            },
-           typeofconversion:{
+           conversion:{
                required:true
            },
-           typeofsites:{
+           type:{
                required:true
            },
            price:{
