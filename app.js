@@ -7,6 +7,7 @@ const mongoose  = require("mongoose");
 // const upload = multer();
 const UserInterface = require("./classes/userInterface");
 
+
 let userInterface = new UserInterface();
 
 app.set("view engine", "ejs");
@@ -39,14 +40,23 @@ app.get("/lands",(req,res)=>{
 })
 
 app.get("/lands/:id",(req,res)=>{
-	userInterface.getLand({_id:req.params.id}).then((land)=>{
-		console.log(land);
-		res.render("show",{land:land});
+	userInterface.getLand({_id:req.params.id}).then((lands)=>{
+		res.render("showLand",{land:lands[0]});
 	})
 })
 
 app.get("/land/sell",(req,res)=>{
 	res.render("sell");
+})
+
+app.post("/land/buy",bodyParser.json(),(req,res)=>{
+	const landId = req.body._id;
+	userInterface.wantToBuy(landId).then(()=>{
+		res.json(true);
+	})
+	.catch((err)=>{
+		res.json(false);
+	})
 })
 
 app.post("/lands",bodyParser.json(),(req,res)=>{

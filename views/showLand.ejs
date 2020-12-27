@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="container" style="display: flex;">
+  <div class="image">
+    <img src="<%= land.imagesUrl[0] %>">
+  </div>
+  <div class="body" style="padding: 2rem;">
+    <label>Type</label>
+    <h1><%= land.type %></h1>
+    <label>Plot area</label>
+    <h2><%= land.square_feet %> sq ft</h2>
+    <label>Estimated Price</label>
+    <h2><%= land.price %></h2>
+    <label>Conversion</label>
+    <h2><%= land.conversion %></h2>
+    <label>locality</label>
+    <h2><%= land.locality %></h2>
+    <label>Address</label>
+    <h2><%= land.address %></h2>
+    <label>Pincode</label>
+    <h2><%= land.pincode %></h2>
+    <button class="wantToBuy" style="cursor: pointer;">Buy This Land</button>
+  </div>
+</div>
+
+
+<%- include("partials/footer.ejs"); %>
+
+<!-- buy.js -->
+<script src="/scripts/buy.js" type="module"></script>

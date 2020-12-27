@@ -1,4 +1,5 @@
-let imgUrls = [];
+export let imgUrls = [];
+const widget = document.getElementById("upload_widget");
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'eagle2501', 
   uploadPreset: 'i2agbl3k',
@@ -11,9 +12,9 @@ var myWidget = cloudinary.createUploadWidget({
   }
 )
 
-
-document.getElementById("upload_widget").addEventListener("click", function(){
+if(widget){
+  widget.addEventListener("click", function(){
     myWidget.open();
-  }, false);
+  },false);
+}
 
-export {imgUrls};

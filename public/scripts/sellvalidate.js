@@ -1,20 +1,20 @@
-
-console.log("linked");
 $(document).ready(function(){
     $('.sellForm').validate({
         rules:{
-            
            length:{
                required:true,
-               number:true
+               number:true,
+               min:1
            },
            breadth:{
                 required:true,
-                number:true
+                number:true,
+                min:1
            },
            square_feet:{
                 required:true,
-                number:true
+                number:true,
+                min:1
            },
            conversion:{
                required:true
@@ -24,7 +24,8 @@ $(document).ready(function(){
            },
            price:{
                required:true,
-               number:true
+               number:true,
+               min:1
            },
            locality:{
                required:true,
@@ -32,12 +33,14 @@ $(document).ready(function(){
            },
            pincode:{
               required:true,
-              number:true
+              number:true,
+              minlength:6
            },
-           Address:{
+           address:{
               required:true,
               rangelength:[10,50]
            }
         }
     })
 })
+

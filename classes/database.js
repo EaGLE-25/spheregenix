@@ -7,12 +7,16 @@ class Database{
     const promise = this.model.create(dataObj);
     promise.then((data)=>{
       console.log("from DB",data);
-      console.log(typeof(data.length));
     })
   }
 
   get(options){
     const promise = this.model.find(options).exec();
+    return promise;
+  }
+
+  update(filter,update={}){
+    const promise = this.model.findOneAndUpdate(filter,update).exec();
     return promise;
   }
 }
