@@ -1,8 +1,55 @@
 <%- include("partials/header.ejs"); %>
 
+<nav class="nav-bar home-nav">
+  <ul class="nav-list" style="list-style: none;">
+    <li class="nav-item">
+      <a href="/" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="/land/sell" class="nav-link">Sell</a>
+    </li>
+    <li class="nav-item">
+      <a href="/lands" class="nav-link">Buy</a>
+    </li>
+  </ul>
+</nav>
+
 
 <h1>this is the landing page</h1>
+<h1>Contact Us</h1>
+<div class="contact-us">
+   <form action="/queries" class="contact-us-form" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="query">Phone</label>
+      <input type="tel" name="phone" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label for="query">Message</label>
+      <textarea name="query" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="submit" class="contact-us-submit" style="cursor: pointer;">
+  </form>
+</div>
 
 
 
+  <!-- jquery cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- jquery validation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <!-- additional methods -->
+  <script src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script>
+  <!-- contact us validate -->
+  <script src="/scripts/contactUsValidate.js" type="text/javascript"></script>
+  <!-- home.js -->
+  <script src="/scripts/home.js" type="module"></script>
+  
 <%- include("partials/footer.ejs"); %>

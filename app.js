@@ -36,12 +36,18 @@ app.get("/",(req,res)=>{
 app.get("/lands",(req,res)=>{
 	userInterface.getLand().then((allLands)=>{
 		res.render("lands",{allLands:allLands});
+	})
+	.catch((err)=>{
+		res.render("error",err);
 	});
 })
 
 app.get("/lands/:id",(req,res)=>{
 	userInterface.getLand({_id:req.params.id}).then((lands)=>{
 		res.render("showLand",{land:lands[0]});
+	})
+	.catch((err)=>{
+		res.render("error",err);
 	})
 })
 
@@ -55,14 +61,27 @@ app.post("/land/buy",bodyParser.json(),(req,res)=>{
 		res.json(true);
 	})
 	.catch((err)=>{
-		res.json(false);
+		res.json(err);
 	})
 })
 
 app.post("/lands",bodyParser.json(),(req,res)=>{
 	console.log("from server",req.body);
-	userInterface.sellMyLand(req.body);
-	res.json(true);
+	userInterface.sellMyLand(req.body).then(()=>{
+		res.json(true);
+	})
+	.catch((err)=>{
+		res.json(err);
+	})
+})
+
+app.post("/queries",bodyParser.json(),(req,res)=>{
+	userInterface.postQuery(req.body).then(()=>{
+		res.json(true);
+	})
+	.catch((err)=>{
+		res.json(err);
+	})
 })
 
 

@@ -2,6 +2,7 @@ const UserAction = require("./userAction");
 const Database = require("./database");
 const LandSchema = require("../models/land");
 const User = require("../models/user");
+const Query = require("../models/query");
 
 
 class UserInterface{
@@ -23,6 +24,12 @@ class UserInterface{
   wantToBuy(landId){
     const database = new Database(User);
     const result = database.update({_id:"5fe76b87f3de2e1e9c9780a0"},{$push:{want_list:landId}});
+    return result;
+  }
+
+  postQuery(query){
+    const database = new Database(Query);
+    const result = database.add(query);
     return result;
   }
 }

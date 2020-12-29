@@ -8,6 +8,7 @@ class Database{
     promise.then((data)=>{
       console.log("from DB",data);
     })
+    return promise;
   }
 
   get(options){
