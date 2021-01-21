@@ -1,4 +1,4 @@
-require('dotenv');
+// require('dotenv');
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -53,6 +53,14 @@ app.get("/lands/:id",(req,res)=>{
 
 app.get("/land/sell",(req,res)=>{
 	res.render("sell");
+})
+
+app.get("/signin",(req,res)=>{
+	res.render("signin");
+})
+
+app.get("/login",(req,res)=>{
+	res.render("login");
 })
 
 app.post("/land/buy",bodyParser.json(),(req,res)=>{

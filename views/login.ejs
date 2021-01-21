@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs"); %>
+
+<h1>Login Page</h1>
+<form action="" method="POST" class="loginForm">
+
+    <!-- email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+            <input type="email" name="mailId" required>
+    </div>
+    <!-- password -->
+    <div class="form-group">
+        <label for="password">password</label>
+            <input type="password" name="password" required>
+    </div> 
+    <input type="submit" value="Sign In">
+</form>
+  <!-- jquery cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- jquery validation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <!-- additional methods -->
+  <script src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script>
+<!-- validation -->
+<script src="/scripts/signInValidate.js"></script>
+<%- include("partials/footer.ejs"); %>
